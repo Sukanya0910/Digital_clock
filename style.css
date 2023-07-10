@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  transition: background-color 0.5s ease;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+}
+
+.digit {
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.separator {
+  font-size: 3rem;
+  margin: 0 0.25rem;
+  color: #666;
+  transition: color 0.5s ease;
+}
+
+.switch {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.switch input[type="checkbox"] {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: background-color 0.5s ease;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.dark-mode {
+  background-color: #333;
+}
+
+.dark-mode .digit {
+  background-color: #fff;
+  color: #333;
+}
+
+.dark-mode .separator {
+  color: #ccc;
+}
